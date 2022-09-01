@@ -1,163 +1,347 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> 
 
 <html class="no-js"> <!--<![endif]-->
-    <head>
-        <title>Sakib Abdullah</title>
+<head>
+    <title>Sakib Abdullah</title>
 
-        <!-- meta -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        
-        <!-- stylesheets -->
-        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-        <link rel="stylesheet" href="assets/font_icon/css/pe-icon-7-stroke.css">
-        <link rel="stylesheet" href="assets/font_icon/css/helper.css">
-        <link rel="stylesheet" href="assets/css/owl.carousel.css">
-        <link rel="stylesheet" href="assets/css/owl.theme.css">
-        <link rel="stylesheet" href="assets/css/animate.css">
-        <link rel="stylesheet" href="assets/css/style.css">
+    <!-- meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-        <!-- google fonts -->
-        <link href='http://fonts.googleapis.com/css?family=Dosis:200,300,400,500|Lato:300,400,700,900,300italic,400italic,700italic,900italic|Raleway:400,200,300,500,100|Titillium+Web:400,200,300italic,300,200italic' rel='stylesheet' type='text/css'>
+    <!-- stylesheets -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/font_icon/css/pe-icon-7-stroke.css">
+    <link rel="stylesheet" href="assets/font_icon/css/helper.css">
+    <link rel="stylesheet" href="assets/css/owl.carousel.css">
+    <link rel="stylesheet" href="assets/css/owl.theme.css">
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 
-        <script src="assets/js/modernizr.js"></script>
+    <!-- google fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Dosis:200,300,400,500|Lato:300,400,700,900,300italic,400italic,700italic,900italic|Raleway:400,200,300,500,100|Titillium+Web:400,200,300italic,300,200italic' rel='stylesheet' type='text/css'>
 
-    </head>
-    <body id="body">
-        <!--[if lt IE 7]>
-                <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
+    <script src="assets/js/modernizr.js"></script>
 
-        <!-- Header area -->
-        <header id="header">
-            <div class="center text-center">
-                <h1 class="bigheadline">Sakib Abdullah</h1>
-                <h4 class="subheadline">Your Website And Web App Developer</h4>
-            </div>
-            <div class="bottom">
-                <a data-scroll href="#navigation" class="scrollDown animated pulse" id="scrollToContent">
-                    <i class="pe-7s-angle-down-circle pe-va"></i>
-                </a>
-            </div>
-        </header>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+    <style>
+        .whatsapp-chat-area {
+            font-family: Arial, Helvetica, sans-serif;
+        }
 
-        <!-- Navigation area -->
-        <section id="navigation">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xs-6">
-                        <div class="logo"><a data-scroll href="#body" class="logo-text">Sakib Abdullah</a></div>
+        .chat-whatspp-float {
+            position: fixed;
+            display: flex;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #4ad504;
+            color: #fff;
+            border-radius: 50px;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            z-index: 100;
+            transition: display 0.3s ease-in;
+        }
+
+        .chat-message-box {
+            position: fixed;
+            width: 400px;
+            height: 270px;
+            display: flex;
+            bottom: 40px;
+            right: 40px;
+            background-color: #f6fdf9;
+            border-radius: 40px;
+            flex-direction: column;
+            transition: all 0.3s ease-in;
+            z-index: 50;
+            display: none;
+        }
+
+        .chat-message-box-header {
+            display: flex;
+            background-color: rgb(0, 98, 137);
+            width: 100%;
+            height: 80px;
+            border-top-right-radius: 40px;
+            border-top-left-radius: 40px;
+            align-items: center;
+            justify-content: space-between;
+            color: #fff;
+        }
+
+        .chat-header-text,
+        .chat-header-close-icon {
+            padding: 0 30px;
+        }
+
+        .chat-header-text {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        .fa-close {
+            background-color: #333;
+            opacity: 0.8;
+            padding: 10px;
+            border-radius: 50%;
+        }
+
+        .chat-message-box-text {
+            background: #fff;
+            filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3));
+            padding: 2px 20px;
+            margin: 15px 20px;
+            border-radius: 30px;
+        }
+
+        .chat-message-box-button-area {
+            float: right;
+            margin: 15px 20px 0 0;
+        }
+
+        .chat-message-text {
+            line-height: 1.6;
+            font-weight: 500;
+            font-size: 17px;
+            color: #4a4a4a;
+        }
+
+        .chat-message-box-button {
+            background-color:  rgb(0, 98, 137);
+            border: none;
+            color: #fff;
+            padding: 20px 30px;
+            border-radius: 40px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .chat-message-box-button:hover {
+            background-color:  rgb(5, 102, 141);
+            border: none;
+            color: #fff;
+            padding: 20px 30px;
+            border-radius: 40px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .chat-message-box-image {
+            border-radius: 50px;
+            margin-right: 10px;
+        }
+
+        @media (max-width: 500px) {
+            .chat-message-box {
+                width: 350px;
+                right: 10px;
+            }
+        }
+
+        @media (max-width: 290px) {
+            .chat-message-box {
+                width: 250px;
+            }
+        }
+    </style>
+</head>
+
+<body id="body">
+    <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <!-- Header area -->
+    <header id="header">
+        <div class="center text-center">
+            <h1 class="bigheadline">Sakib Abdullah</h1>
+            <h4 class="subheadline">Your Website And Web App Developer</h4>
+        </div>
+        <div class="bottom">
+            <a data-scroll href="#navigation" class="scrollDown animated pulse" id="scrollToContent">
+                <i class="pe-7s-angle-down-circle pe-va"></i>
+            </a>
+        </div>
+    </header>
+
+    <!-- Navigation area -->
+    <section id="navigation">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-6">
+                    <div class="logo"><a data-scroll href="#body" class="logo-text">Sakib Abdullah</a></div>
+                </div>
+                <div class="col-xs-6">
+                    <div class="nav">
+                        <a href="#" data-placement="bottom" title="Menu" class="menu" data-toggle="dropdown"><i class="pe-7s-menu"></i></a>
+                        <div class="dropdown-menu">
+                            <div class="arrow-up"></div>
+                            <ul>
+                                <li><a data-scroll href="#body">Home <i class="pe-7s-home"></i></a><span class="menu-effect"></span></li>
+                                <li><a data-scroll href="#services">Service <i class="pe-7s-config"></i></a><span class="menu-effect"></span></li>
+                                <li><a data-scroll href="#contact">Contact <i class="pe-7s-help1"></i></a><span class="menu-effect"></span></li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="col-xs-6">
-                        <div class="nav">
-                            <a href="#" data-placement="bottom" title="Menu" class="menu" data-toggle="dropdown"><i class="pe-7s-menu"></i></a>
-                             <div class="dropdown-menu">
-                                 <div class="arrow-up"></div>
-                                 <ul>
-                                     <li><a data-scroll href="#body">Home <i class="pe-7s-home"></i></a><span class="menu-effect"></span></li>
-                                     <li><a data-scroll href="#services">Service <i class="pe-7s-config"></i></a><span class="menu-effect"></span></li>                                     
-                                     <li><a data-scroll href="#contact">Contact <i class="pe-7s-help1"></i></a><span class="menu-effect"></span></li>
-                                 </ul>
-                             </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- services section -->
+
+    <section id="services" class="service-area">
+        <div class="container">
+            <h2 class="block_title">Services</h2>
+            <div class="row">
+                <div class="col-md-3 col-sm-6">
+                    <div class="services">
+                        <div class="service-wrap">
+                            <i class="pe-7s-science pe-dj pe-va"></i>
+                            <h3>Domain & Hosting</h3>
+                            <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum, commodi.</p> -->
                         </div>
                     </div>
 
                 </div>
-            </div>            
-        </section>
-        
-        <!-- services section -->
-
-        <section id="services" class="service-area">
-            <div class="container">
-                <h2 class="block_title">Services</h2>
-                <div class="row">
-                    <div class="col-md-3 col-sm-6">
-                        <div class="services">
-                            <div class="service-wrap">    
-                                <i class="pe-7s-science pe-dj pe-va"></i>
-                                <h3>Domain & Hosting</h3>
-                                <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum, commodi.</p> -->
-                            </div>
-                        </div>
-                        
-                    </div>
-                    <div class="col-md-3 col-sm-6">
-                        <div class="services">
-                            <div class="service-wrap">
-                                <i class="pe-7s-monitor pe-dj pe-va"></i>
-                                <h3>Website Design</h3>
-                                <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum, commodi.</p> -->
-                            </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="services">
+                        <div class="service-wrap">
+                            <i class="pe-7s-monitor pe-dj pe-va"></i>
+                            <h3>Website Design</h3>
+                            <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum, commodi.</p> -->
                         </div>
                     </div>
-                    <div class="col-md-3 col-sm-6">
-                        <div class="services">
-                            <div class="service-wrap">
-                                <i class="pe-7s-edit pe-dj pe-va"></i>
-                                <h3>Web Application</h3>
-                                <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum, commodi.</p> -->
-                            </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="services">
+                        <div class="service-wrap">
+                            <i class="pe-7s-edit pe-dj pe-va"></i>
+                            <h3>Web Application</h3>
+                            <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum, commodi.</p> -->
                         </div>
                     </div>
-                    <div class="col-md-3 col-sm-6">
-                        <div class="services">
-                            <div class="service-wrap">
-                                <i class="pe-7s-config pe-dj pe-va"></i>
-                                <h3>Support</h3>
-                                <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum, commodi.</p> -->
-                            </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="services">
+                        <div class="service-wrap">
+                            <i class="pe-7s-config pe-dj pe-va"></i>
+                            <h3>Support</h3>
+                            <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum, commodi.</p> -->
                         </div>
                     </div>
                 </div>
             </div>
-        </section><!-- services -->
+        </div>
+    </section><!-- services -->
+    <!-- Contact Area -->
 
-        <!-- Contact Area -->
-
-        <section id="contact" class="">            
-            <div id="contact-area">
-                <div class="container">
-                    <h2 class="block_title">Hey !!!</h2>
-                    <div class="row">
-                        <div class="col-xs-12">
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="moreDetails">
-                                <h2 class="con-title">More About Me ??</h2>
-                                <p>First of all my name is SAKIB ABDULLAH. I am from Chattogram, Bangladesh. By Profession I am a full time web developer. </p>
-                                <p>If you want I will help you to build your dream WEBSITE. </p>
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="moreDetails">
-                                <ul class="address">                                    
-                                    <li><i class="pe-7s-mail"></i><span>sakib.2k4@gmail.com</span></li>
-                                    <li><i class="pe-7s-phone"></i><span>+88 01671 66 80 80</span></li>
-                                    <li><i class="pe-7s-phone"></i><span>+88 01842 66 80 80</span></li>
-                                    <li><i class="pe-7s-phone"></i><span>+88 01922 66 80 80</span></li>
-                                </ul>
-                            </div>
+    <section id="contact" class="">
+        <div id="contact-area">
+            <div class="container">
+                <h2 class="block_title">Hey !!!</h2>
+                <div class="row">
+                    <div class="col-xs-12">
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="moreDetails">
+                            <h2 class="con-title">More About Me ??</h2>
+                            <p>First of all my name is SAKIB ABDULLAH. I am from Chattogram, Bangladesh. By Profession I am a full time web developer. </p>
+                            <p>If you want I will help you to build your dream WEBSITE. </p>
                         </div>
                     </div>
-                </div><!-- container -->
-            </div><!-- contact-area -->            
-        </section><!-- contact -->
+                    <div class="col-sm-6">
+                        <div class="moreDetails">
+                            <ul class="address">
+                                <li><i class="pe-7s-mail"></i><span>sakib.2k4@gmail.com</span></li>
+                                <li><i class="pe-7s-phone"></i><span>+88 01671 66 80 80</span></li>
+                                <li><i class="pe-7s-phone"></i><span>+88 01842 66 80 80</span></li>
+                                <li><i class="pe-7s-phone"></i><span>+88 01922 66 80 80</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- container -->
+        </div><!-- contact-area -->
+    </section><!-- contact -->
 
-        <!-- Necessery scripts -->
-        <script src="assets/js/jquery-2.1.3.min.js"></script>
-        <script src="assets/js/bootstrap.min.js"></script>
-        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
-        <script src="assets/js/jquery.actual.min.js"></script>
-        <script src="assets/js/smooth-scroll.js"></script>
-        <script src="assets/js/owl.carousel.js"></script>
-        <script src="assets/js/script.js"></script>
+    <div class="whatsapp-chat-area">
+        <a class="float" id="chat-whatsapp-button-click" onclick="whatsappbtnClick()">
+            <i class="fa fa-whatsapp chat-whatspp-float"></i>
+        </a>
 
-    </body>
+        <div class="chat-message-box">
+            <div class="chat-message-box-header">
+                <div class="chat-header-text">
+                    <img src="./assets/images/pp.jpg"
+                         width="45"
+                         height="40"
+                         class="chat-message-box-image"
+                         alt="user image" />
+                    <h4>Sakib Abdullah</h4>
+                </div>
+                <div class="chat-header-close-icon"> 
+                    <button class="" style="background: transparent; border: none; font-size: 20px;" id="chat-close-message-box">X</button>
+                </div>
+            </div>
+            <div class="chat-message-box-body">
+                <div class="chat-message-box-text">
+                    <p class="chat-message-text">
+                        Hello Sir, <br />
+                        How can I Help you?
+                    </p>
+                </div>
+                <div class="chat-message-box-button-area">
+                    <a class="chat-message-box-button"
+                       href="https://api.whatsapp.com/send?phone=8801922668080&text=Hello, Thanks for contact."
+                       target="_blank">
+                        Open Chat
+                        <i class="fa fa-long-arrow-right" style="margin-left: 10px"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Necessery scripts -->
+    <script src="assets/js/jquery-2.1.3.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <!--<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>-->
+    <script src="assets/js/jquery.actual.min.js"></script>
+    <script src="assets/js/smooth-scroll.js"></script>
+    <script src="assets/js/owl.carousel.js"></script>
+    <script src="assets/js/script.js"></script>
+
+    <script type="text/javascript">
+        var whatsappBtn = document.getElementById("chat-whatsapp-button-click");
+        var messageBox = document.querySelector(".chat-message-box");
+        var closeMessageBox = document.getElementById("chat-close-message-box");
+
+        whatsappBtn.addEventListener("click", function () {
+            messageBox.style.display = "flex";
+            whatsappBtn.style.display = "none";
+        });
+
+        closeMessageBox.addEventListener("click", function () {
+            messageBox.style.display = "none";
+            whatsappBtn.style.display = "flex";
+        });
+    </script>
+</body>
 </html>
 
